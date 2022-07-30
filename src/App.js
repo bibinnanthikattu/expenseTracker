@@ -23,9 +23,13 @@ function App() {
       date: new Date(2021, 5, 12),
     },
   ];
+
+  const handleUserExpenseData = (expenseData) => {
+    console.log(expenseData);
+  }
   return (
     <div className="App">
-      <AddExpense/>
+      <AddExpense getUserExpenseData={handleUserExpenseData} />
       <Expenses items={expenses} />
     </div>
   );

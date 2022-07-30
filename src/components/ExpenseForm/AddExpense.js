@@ -3,10 +3,15 @@ import './AddExpense.css'
 import { ExpenseForm } from './ExpenseForm'
 
 
-export const AddExpense = () => {
+export const AddExpense = (props) => {
+  const getUserExpense = (enteredData) => {
+  // console.log(enteredData);
+    props.getUserExpenseData(enteredData)
+}
+
   return (
     <div className='new-expense '>
-      <ExpenseForm/>
+      <ExpenseForm onSubmitExpense={getUserExpense} />
     </div>
   )
 }
