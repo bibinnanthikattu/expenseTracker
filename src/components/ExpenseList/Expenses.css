@@ -6,3 +6,6 @@
     max-width: 95%;
 
 }
+ul,li {
+    list-style-type: none;
+}
