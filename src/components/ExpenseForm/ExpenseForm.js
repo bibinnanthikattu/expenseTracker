@@ -25,6 +25,7 @@ export const ExpenseForm = (props) => {
         };
         // console.log(expenseData);
         props.onSubmitExpense(expenseData);
+        props.handleFormCancel()
         setUserTitle('');
         setUserAmount('');
         setUserDate('');
@@ -40,14 +41,17 @@ export const ExpenseForm = (props) => {
               </div>
               <div className='new-expense__control'>
                   <label htmlFor="">Amount</label>
-                  <input type="number" min='0.01' set='0.99' value={userAmount} onChange={handleUserAmount} />
+                  <input type="number"  value={userAmount} onChange={handleUserAmount} />
               </div>
               <div className='new-expense__control'>
                   <label htmlFor="">Date</label>
                   <input type="date" min='2019-01-31' max='2022-12-31' value={userDate} onChange={handleUserDate} />
               </div>
               <div className='new-expense__actions'>
-                  <button>Add</button>
+                  <button type='button' onClick={props.handleFormCancel}>Cancel</button>
+              </div>
+              <div className='new-expense__actions'>
+                  <button type='submit'>Add Expense</button>
               </div>
           </div>
     </form>
